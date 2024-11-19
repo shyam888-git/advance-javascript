@@ -12,14 +12,13 @@ function sumSalaries(department){
     if(Array.isArray(department)){
         return department.reduce((prev,current)=>prev+current.salary,0);
     }
-    else{
-        let sum=0;
-        for(let sudeep of Object.values(department)){
-            console.log(sudeep,'sudeep===>')
-            sum+=sumSalaries(sudeep);
-        }
-        return sum;
+   else{
+    let sum=0;
+    for(let sudeep of Object.values(department)){
+        sum+=sumSalaries(sudeep);
     }
+    return sum;
+   }
 
 }
 console.log(sumSalaries(company));
